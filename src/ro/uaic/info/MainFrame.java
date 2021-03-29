@@ -1,5 +1,7 @@
 package ro.uaic.info;
 
+import javafx.stage.Stage;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -7,13 +9,20 @@ public class MainFrame extends JFrame {
     ConfigPanel configPanel;
     ControlPanel controlPanel;
     DrawingPanel canvas;
+    Stage S;
 
     public MainFrame() {
         super("My Application");
-        init();
+        initialization();
     }
 
-    private void init() {
+    public MainFrame(Stage s) {
+        super("My Application");
+        S = s;
+        initialization();
+    }
+
+    private void initialization() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         canvas = new DrawingPanel(this);

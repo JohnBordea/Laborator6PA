@@ -1,6 +1,7 @@
 package ro.uaic.info;
 
 import com.sun.media.jfxmediaimpl.platform.Platform;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
@@ -19,13 +20,14 @@ public class ControlPanel extends JPanel {
     JButton saveBtn = new JButton("Save");
     JButton resetBtn = new JButton("Reset");
     JButton exitBtn = new JButton("Exit");
+    FileChooser fileChooser;
 
     public ControlPanel(MainFrame frame) {
         this.frame = frame;
-        init();
+        initialization();
     }
 
-    private void init() {
+    private void initialization() {
         setLayout(new GridLayout(1, 4));
         loadBtn.addActionListener(this::load);
         saveBtn.addActionListener(this::save);
